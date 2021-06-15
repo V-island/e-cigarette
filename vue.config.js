@@ -10,21 +10,29 @@ function resolve(dir) {
 module.exports = {
   //基本路径
   publicPath: IS_PROD ? '/' : './',
+
   //构建时的输出目录
   outputDir: process.env.outputDir,
+
   //放置静态资源的目录
   assetsDir: "assets",
+
   //文件名哈希
   filenameHashing: true,
+
   //是否在保存的时候使用 `eslint-loader` 进行检查。
   lintOnSave: true,
+
   //是否为生产环境构建生成 source map？
-  productionSourceMap: !IS_PROD, // 生产环境的 source map
+  // 生产环境的 source map
+  productionSourceMap: !IS_PROD,
+
   //启动项目在8080端口自动打开
   devServer: {
     open: true,
     port: 8080,
   },
+
   chainWebpack: config => {
     config.resolve.alias
       .set("@", resolve("src"))
@@ -35,6 +43,7 @@ module.exports = {
       config.optimization.minimize(true);
     }
   },
+
   configureWebpack: {
     plugins: [
       new webpack.ProvidePlugin({
@@ -44,6 +53,7 @@ module.exports = {
       })
     ]
   },
+
   // 第三方插件配置
   pluginOptions: {
     'style-resources-loader': {
@@ -53,11 +63,16 @@ module.exports = {
       ] 
     }
   },
+
   css: {
     loaderOptions: {
       less: {
         javascriptEnabled: true
       }
     }
-  }
+  },
+
+  transpileDependencies: [
+    'vuetify'
+  ]
 }

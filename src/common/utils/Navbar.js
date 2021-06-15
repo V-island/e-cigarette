@@ -85,7 +85,6 @@ var Navbar = {
     });
   },
   parallax: function parallax(el) {
-    console.log($(el))
     if (!$(el).length) return;
     var top = $(el).offset().top;
     $(window).scroll(function () {
