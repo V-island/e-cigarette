@@ -1,0 +1,135 @@
+@import (reference) './material-colors';
+@import (reference) './resets';
+@import (reference) './mixin';
+
+@body-bg: 				#252525;
+@header-bg: 			#1e1e1e;
+@content-bg: 			#272727;
+@footer-bg: 			#1b1b1b;
+
+@brand-primary:   #2882e8;
+
+@font-size-base: 	14px;
+@base-font-size:    14;
+@line-height-base: 20/14;
+
+@light-text-color:	#B5BEC9;
+@text-color: 		#e7e7e7;
+
+* {
+  .box-sizing(border-box);
+ 
+}
+*:before,
+*:after {
+  .box-sizing(border-box);
+}
+* {
+	padding: 0;
+	margin: 0;
+}
+ul li {
+	list-style: none;
+}
+ul {
+	display: block;
+	list-style-type: disc;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	padding-inline-start: 40px;
+}
+li {
+	display: list-item;
+	text-align: -webkit-match-parent;
+}
+
+html,body{
+	.size(100%);
+	margin:0;
+	padding:0;
+	font-size: @font-size-base;
+	color: @text-color;
+
+  &.show-modal{
+    overflow: hidden;
+  }
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control{
+	background-color: #fff !important;
+}
+body{
+	color: @text-color;
+	background: @body-bg;
+}
+[name='btSelectItem']:disabled{
+		background: #eee;
+}
+a{
+	text-decoration: none;
+  &:hover, &.active {
+    color: @brand-primary;
+  }
+}
+.fa {
+	color: inherit;
+	line-height: inherit;
+}
+p,a {
+	color: #999;
+}
+
+.wow {
+	-webkit-animation-name: fadeInUp;
+	animation-name: fadeInUp
+}
+
+.ellipsis {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	display: block;
+}
+
+.module{
+  position: relative;
+  overflow: hidden;
+
+  .container_header{
+    .title {
+      font-size: 24px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .subtitle {
+      margin-top: 4px;
+      font-size: 13px;
+      text-transform: uppercase
+    }
+  }
+
+  .module_container{
+    padding: 20px;
+		max-width: 1170px;
+    margin: 0 auto;
+
+    .container_header{
+      .title {
+        color: #333;
+      }
+      .subtitle {
+
+        color: #999;
+      }
+    }
+    &.wide {
+      padding: 20px 5%;
+    }
+  }
+	.container_content:before{
+		clear: both;
+    display: table;
+    content: "";
+	}
+}
