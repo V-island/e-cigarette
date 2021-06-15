@@ -12,7 +12,7 @@
       <div class="container_content">
         <VueSlickCarousel v-bind="product.settings">
           <template v-for="item in product.productList">
-            <ProductItem :key="item.id" style="padding: 0 15px 20px 0;"></ProductItem>
+            <ProductItem :key="item.id" :options="item" ></ProductItem>
           </template>
         </VueSlickCarousel>
         <router-link class="more-link" to="/product">
@@ -21,6 +21,7 @@
       </div>
     </div>
   </div>
+
 </section>
 </template>
 
@@ -61,42 +62,42 @@ export default {
             id: '202106001',
             title: '青禾1号',
             description: '清新  健康  激情  热爱',
-            imgUrl: '@/assets/home/product01.png'
+            imgUrl: './product/product01.png'
           },{
             id: '202106002',
             title: '青禾2号',
             description: '清新  健康  激情  热爱',
-            imgUrl: '@/assets/home/product02.png'
+            imgUrl: './product/product02.png'
           },{
             id: '202106003',
             title: '青禾3号',
             description: '清新  健康  激情  热爱',
-            imgUrl: '@/assets/home/product03.png'
+            imgUrl: './product/product03.png'
           },{
             id: '202106004',
             title: '青禾4号',
             description: '清新  健康  激情  热爱',
-            imgUrl: '@/assets/home/product04.png'
+            imgUrl: './product/product04.png'
           },{
             id: '202106005',
             title: '青禾5号',
             description: '清新  健康  激情  热爱',
-            imgUrl: '@/assets/home/product01.png'
+            imgUrl: './product/product01.png'
           },{
             id: '202106006',
             title: '青禾6号',
             description: '清新  健康  激情  热爱',
-            imgUrl: '@/assets/home/product02.png'
+            imgUrl: './product/product02.png'
           },{
             id: '202106007',
             title: '青禾7号',
             description: '清新  健康  激情  热爱',
-            imgUrl: '@/assets/home/product03.png'
+            imgUrl: './product/product03.png'
           },{
             id: '202106008',
             title: '青禾8号',
             description: '清新  健康  激情  热爱',
-            imgUrl: '@/assets/home/product04.png'
+            imgUrl: './product/product04.png'
           },
         ]
       }

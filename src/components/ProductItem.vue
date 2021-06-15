@@ -1,25 +1,30 @@
 <template>
   <div class="item">
-    <a href="//mo005-3428.mo5.line1.uemo.net/list/post/126209/" class="item_box">
+    <router-link class="item_box" :to="`/product/${options.id}`">
       <div class="item_img" target="_blank">
-          <img src="//resources.jsmo.xin/templates/upload/3428/201707/1499871826292.jpg">
+          <img :src="options.imgUrl" :alt="options.title">
           <div class="item_mask"></div>
       </div>
       <div class="item_wrapper clearfix">
         <div class="item_info clearfix">
           <div class="text_wrap">
-              <p class="title ellipsis">智能机器人领域的推动者</p>
-              <p class="subtitle ellipsis">产品设计</p>
+              <p class="title ellipsis">{{options.title}}</p>
+              <p class="subtitle ellipsis">{{options.description}}</p>
           </div>
         </div>
       </div>
-    </a>
+    </router-link>
   </div>
 </template>
 
 <script>
   export default {
-    
+    props: {
+      options: {
+        type: Object,
+        required: true,
+      },
+    },
   }
 </script>
 

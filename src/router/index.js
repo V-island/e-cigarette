@@ -21,6 +21,11 @@ const router = {
       component: solve => require(['@/views/Product.vue'], solve)
     },
     {
+      path: '/product/:id',
+      name: 'ProductDetail',
+      component: solve => require(['@/views/ProductDetail.vue'], solve)
+    },
+    {
       path: '/news',
       name: 'News',
       component: solve => require(['@/views/News.vue'], solve)
