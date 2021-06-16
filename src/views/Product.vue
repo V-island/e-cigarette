@@ -26,6 +26,7 @@
   import WowMixin from "@mixins/WowMixin";
   import BannerPreview from '../components/BannerPreview.vue'
   import ProductItem from '../components/ProductItem.vue'
+  
   export default {
     mixins: [WowMixin],
     components: {
