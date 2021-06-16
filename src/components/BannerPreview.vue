@@ -1,7 +1,9 @@
 <template>
-  <section id="topSlider" class="banner">
-    <div class="image" :data-thumb="options.url" :style="{backgroundImage: `url(${options.url})`}"></div>
-    <img class="hide" v-bind:alt="options.name" v-bind:src="options.url">
+  <section id="topSlider">
+    <div class="banner">
+      <div class="image" :data-thumb="options.url" :style="{backgroundImage: `url(${options.url})`}"></div>
+      <img class="hide" v-bind:alt="options.name" v-bind:src="options.url">
+    </div>
   </section>
 </template>
 
@@ -19,7 +21,7 @@
     data() {
       return {
         config: {
-          parameter:'#topSlider'
+          parameter:'#topSlider .banner'
         },
       }
     },
@@ -35,6 +37,9 @@
 <style lang="less" scoped>
 .hide{
   display: none;
+}
+#topSlider{
+  height: ~'calc(80vh - 82px)';
 }
 .banner{
   width: 100%;

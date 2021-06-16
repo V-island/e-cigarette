@@ -213,3 +213,35 @@ p,a {
     font-size: 20px;
   }
 }
+
+.page_module{
+  position: relative;
+  overflow: hidden;
+  background-color: @content-bg;
+  padding: 90px 80px 130px;
+
+  >.container_header{
+    text-align: center;
+
+    .title {
+      font-size: 40px;
+      font-weight: bold;
+      margin: 0 auto;
+      position: relative;
+      color: #fff;
+    }
+    .subtitle {
+      margin-top: 4px;
+      font-size: 13px;
+      text-transform: uppercase;
+      color: #999;
+    }
+  }
+  >.container_category{
+    text-align: center;
+    margin: 40px auto;
+  }
+  >.container_content{
+    padding: 20px 0;
+  }
+}
