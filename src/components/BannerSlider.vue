@@ -2,7 +2,7 @@
   <section id="topSlider" >
     <ul class="content_list">
       <li v-for="(banner, index) in banners" :key="index">
-        <div class="item_bg image" :data-thumb="banner.url" :style="`background-image:url(${banner.url})`">
+        <div class="item_bg image" :data-thumb="banner.url" :style="{backgroundImage: `url(${banner.url})`}">
           <img class="hide" v-bind:alt="banner.name" v-bind:src="banner.url" style="display: none;">
         </div>
       </li>
@@ -16,8 +16,6 @@
   require('bxslider/dist/jquery.bxslider.css')
   
   import Navbar from '@utils/Navbar'
-  import Banner_01 from '@/assets/home/banner01.png'
-  import Banner_02 from '@/assets/home/banner02.png'
 
   export default {
     data() {
@@ -27,10 +25,10 @@
         },
         banners: [{
           name: "青禾1号",
-          url: Banner_01
+          url: './banner/banner01.png'
         }, {
           name: "青禾2号",
-          url: Banner_02
+          url: './banner/banner02.png'
         }]
       }
     },

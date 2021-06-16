@@ -1,12 +1,25 @@
 <template>
-  <div>
-    关于
-  </div>
+  <section>
+    <BannerPreview :options='banner'/>
+  </section>
 </template>
 
 <script>
+  import WowMixin from "@mixins/WowMixin";
+  import BannerPreview from '../components/BannerPreview.vue'
   export default {
-    
+    mixins: [WowMixin],
+    components: {
+      BannerPreview
+    },
+    data() {
+      return {
+        banner: {
+          name: '关于',
+          url: './banner/banner_about.png'
+        }
+      }
+    },
   }
 </script>
 
