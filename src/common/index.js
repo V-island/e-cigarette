@@ -5,6 +5,7 @@ import installIoniconsVue from "./install/IoniconsVue";
 import VuetifyVue from './install/VuetifyVue';
 
 import 'font-awesome/css/font-awesome.min.css';
+import 'animate.css';
 
 const Common = {}
 Common.install = function (Vue) {

@@ -1,7 +1,7 @@
 <template>
   <div class="item">
     <router-link class="item_box" :to="`/product/${options.id}`">
-      <div class="item_img" target="_blank">
+      <div class="item_img">
           <img :src="options.imgUrl" :alt="options.title">
           <div class="item_mask"></div>
       </div>
@@ -23,7 +23,7 @@
       options: {
         type: Object,
         required: true,
-      },
+      }
     },
   }
 </script>

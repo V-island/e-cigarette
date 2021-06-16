@@ -37,6 +37,7 @@ module.exports = {
     config.resolve.alias
       .set("@", resolve("src"))
       .set("@utils", resolve("src/common/utils"))
+      .set("@mixins", resolve("src/common/mixins"))
 
     if (IS_PROD) {
       // 压缩代码
