@@ -68,7 +68,7 @@
       </div>
     </div>
   </div>
-  <div class="contact module">
+  <div class="team module">
     <div class="module_container">
       <div class="container_header wow fadeInUp">
         <p class="title">核心团队</p>
@@ -76,7 +76,7 @@
       </div>
       <div class="container_content">
         <div class="content_wrapper">
-          <ContactSlider class="side" :list="contactList" />
+          <TeamSlider class="side" :list="teamList" />
         </div>
       </div>
     </div>
@@ -93,7 +93,7 @@ import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 import BannerSlider from '../components/BannerSlider.vue'
 import ProductItem from '../components/ProductItem.vue'
 import NewItem from '../components/NewItem.vue'
-import ContactSlider from '../components/ContactSlider.vue'
+import TeamSlider from '../components/TeamSlider.vue'
 
 // image
 import product_bg from '@/assets/home/product_bg.png'
@@ -105,7 +105,7 @@ export default {
     VueSlickCarousel,
     ProductItem,
     NewItem,
-    ContactSlider
+    TeamSlider
   },
   data() {
     return {
@@ -189,7 +189,7 @@ export default {
         description: '现在市面上几乎所有的电子烟品牌，都是靠加热型雾化器产生烟雾。火器电子烟看到，虽然加热型雾化器技术...',
         imgUrl: './news/news01.png'
       }],
-      contactList: [{
+      teamList: [{
         id: '202106001',
         title: '马克',
         subtitle: '常务副总经理',
@@ -407,7 +407,7 @@ export default {
   }
 }
 
-.contact{
+.team{
   min-height: 360px;
   padding: 100px 0 0;
   background: #272727;

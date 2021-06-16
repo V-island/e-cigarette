@@ -1,21 +1,21 @@
 <template>
-<section>
-<VueSlickCarousel class="slick-slider" v-bind="settings" ref="info">
-  <div v-for="item in list" :key="item.id">
-    <div class="slider wow fadeInUp">
-      <div class="preview" :style="{backgroundImage: `url(${item.imgUrl})`}">
-        <!-- <img :src="item.imgUrl" :alt="item.title"> -->
-      </div>
-      <div class="info">
-        <div class="text_wrap">
-          <p class="title ellipsis">{{item.title}}</p>
-          <p class="subtitle ellipsis">{{item.subtitle}}</p>
+<section :class="theme">
+  <VueSlickCarousel class="slick-slider" v-bind="settings" ref="info">
+    <div v-for="item in list" :key="item.id">
+      <div class="slider wow fadeInUp">
+        <div class="preview" :style="{backgroundImage: `url(${item.imgUrl})`}">
+          <!-- <img :src="item.imgUrl" :alt="item.title"> -->
         </div>
-        <p class="description">{{item.description}}</p>
+        <div class="info">
+          <div class="text_wrap">
+            <p class="title ellipsis">{{item.title}}</p>
+            <p class="subtitle ellipsis">{{item.subtitle}}</p>
+          </div>
+          <p class="description">{{item.description}}</p>
+        </div>
       </div>
     </div>
-  </div>
-</VueSlickCarousel>
+  </VueSlickCarousel>
 </section>
 </template>
 
@@ -31,7 +31,8 @@ export default {
     list: {
       type: Array,
       required: true,
-    }
+    },
+    theme: String
   },
   data() {
     return {
@@ -61,29 +62,35 @@ export default {
 .info {
   width: ~'calc(100% / 2)';
 }
+
 .preview {
   .background-imager();
+  background-position: center bottom;
   height: 100%;
-  img{
+
+  img {
     width: 100%;
     height: auto;
   }
 }
-.info{
+
+.info {
   padding-top: 80px;
 
-  .title{
-    width:50%;
+  .title {
+    width: 50%;
     color: #fff;
     font-size: 26px;
   }
-  .subtitle{
+
+  .subtitle {
     color: #fff;
     font-size: 16px;
     margin-top: 20px;
     line-height: 16px;
   }
-  .description{
+
+  .description {
     .text-line-clamp(3);
     margin-top: 20px;
     font-size: 14px;
@@ -94,7 +101,7 @@ export default {
   }
 }
 
-/deep/ .slick-slider{
+/deep/ .slick-slider {
   .slick-prev,
   .slick-next {
     margin-top: -20px;
@@ -129,6 +136,43 @@ export default {
 
     &::before {
       content: "\f105";
+    }
+  }
+}
+
+.team-theme{
+  .info{
+    padding-top: 200px;
+
+    .title{
+      color: @brand-primary;
+      font-weight: bold;
+      margin: 0;
+    }
+    .subtitle {
+      color: #939393;
+      margin: 10px 0;
+    }
+    .text_wrap{
+      position: relative;
+      margin-bottom: 40px;
+
+      &::after{
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        width: 20px;
+        height: 2px;
+        left: 0;
+        right: 0;
+        background-color: #939393;
+      }
+    }
+  }
+  /deep/ .slick-slider{
+    .slick-prev,
+    .slick-next{
+      top: 60%;
     }
   }
 }
