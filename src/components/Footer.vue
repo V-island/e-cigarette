@@ -36,11 +36,13 @@
     </div>
   </div>
   <div class="footer">
-    <p>
-      <span class="ellipsis">
-        Copyright © 2021 LVC深圳市青禾科技有限公司所有版权
-      </span>
-    </p>
+    <v-container>
+      <p>
+        <span class="ellipsis">
+          Copyright © 2021 LVC深圳市青禾科技有限公司所有版权
+        </span>
+      </p>
+    </v-container>
   </div>
 </section>
 </template>
@@ -176,12 +178,10 @@ export default {
 }
 
 .footer {
-  padding: 15px 0;
   border-top: 1px solid @md-grey-800;
   background-color: @footer-bg;
 
   p {
-    width: 1170px;
     line-height: 24px;
     height: 24px;
     text-align: center;

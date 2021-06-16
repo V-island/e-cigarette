@@ -2,14 +2,14 @@
   <div class="item">
     <router-link class="item_box" :to="`/product/${options.id}`">
       <div class="item_img">
-          <img :src="options.imgUrl" :alt="options.title">
-          <div class="item_mask"></div>
+        <img :src="options.imgUrl" :alt="options.title">
+        <div class="item_mask"></div>
       </div>
       <div class="item_wrapper clearfix">
         <div class="item_info clearfix">
           <div class="text_wrap">
-              <p class="title ellipsis">{{options.title}}</p>
-              <p class="subtitle ellipsis">{{options.description}}</p>
+            <p class="title ellipsis">{{options.title}}</p>
+            <p class="subtitle ellipsis">{{options.description}}</p>
           </div>
         </div>
       </div>
