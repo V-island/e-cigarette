@@ -48,10 +48,6 @@ import WowMixin from "@mixins/WowMixin";
 import BannerPreview from '../components/BannerPreview.vue'
 import TeamSlider from '../components/TeamSlider.vue'
 
-// image
-import teamBgImage from '@/assets/about/team_bg.png'
-import lvcBgImage from '@/assets/about/lvc_bg.png'
-
 export default {
   mixins: [WowMixin],
   components: {
@@ -66,12 +62,12 @@ export default {
       },
       introduction: {
         style: {
-          backgroundImage: `url(${lvcBgImage})`
+          backgroundImage: `url(${require('@/assets/about/team_bg.png')})`
         },
       },
       team: {
         style: {
-          backgroundImage: `url(${teamBgImage})`
+          backgroundImage: `url(${require('@/assets/about/lvc_bg.png')})`
         },
       },
       courseList: [{

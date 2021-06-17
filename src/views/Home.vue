@@ -95,9 +95,6 @@ import ProductItem from '../components/ProductItem.vue'
 import NewItem from '../components/NewItem.vue'
 import TeamSlider from '../components/TeamSlider.vue'
 
-// image
-import product_bg from '@/assets/home/product_bg.png'
-
 export default {
   mixins: [WowMixin],
   components: {
@@ -111,7 +108,7 @@ export default {
     return {
       product: {
         style: {
-          backgroundImage: `url(${product_bg})`
+          backgroundImage: `url(${require('@/assets/home/product_bg.png')})`
         },
         settings: {
           dots: true,
