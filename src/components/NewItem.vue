@@ -8,7 +8,7 @@
     <div class="item_wrapper clearfix">
       <p class="date_wrap">
         <span class="year">{{options.year}}</span>
-        <span class="md">{{options.time}}</span>
+        <span class="md">{{options.date}}</span>
       </p>
       <div class="item_info clearfix">
         <div class="text_wrap">

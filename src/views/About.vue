@@ -21,8 +21,8 @@
       </div>
       <div class="course-content">
         <div class="course-item wow fadeInUp" v-for="(item, index) in courseList" :key="index">
-          <p class="time">
-            <span>{{item.time}}</span>
+          <p class="date">
+            <span>{{item.date}}</span>
           </p>
           <p class="description">{{item.description}}</p>
         </div>
@@ -71,10 +71,10 @@ export default {
         },
       },
       courseList: [{
-        time: '2021.03',
+        date: '2021.03',
         description: '青禾的第一款产品问世，在大烟雾盒子颓势的时代，青禾的问世在玩家中掀起了一次骚动，作为第一款产品，我们逆市而生，只因为我们懂得始于热爱，赋予热爱。'
       },{
-        time: '2021',
+        date: '2021',
         description: '2020年1月，LVC团队成了了青禾科技有限公司，作为新的起点，我们会坚持自己的理念，拿出出色的产品，用热爱感动热爱，用热爱撼动造作。'
       }],
       teamList: [{
@@ -153,7 +153,7 @@ export default {
   }
   .course-item{
     margin-right: 20px;
-    .time{
+    .date{
       font-size: 36px;
       font-weight: bold;
       margin: 0 auto;

@@ -31,6 +31,11 @@ const router = {
       component: solve => require(['@/views/News.vue'], solve)
     },
     {
+      path: '/news/:id',
+      name: 'NewsDetail',
+      component: solve => require(['@/views/NewsDetail.vue'], solve)
+    },
+    {
       path: '/merchants',
       name: 'Merchants',
       component: solve => require(['@/views/Merchants.vue'], solve)
@@ -45,10 +50,22 @@ const router = {
       name: 'Contact',
       component: solve => require(['@/views/Contact.vue'], solve)
     }
-  ]
+  ],
+  scrollBehavior() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({ x: 0, y: 0 })
+      }, 100)
+    })
+  }
 };
 
 // 构建VueRouter对象
 let vueRouter = new VueRouter(router);
+// 拦截路由，进行授权判断
+vueRouter.beforeEach((to, from, next) => {
+  document.body.scrollTop = 0
+  next()
+});
 
 export default vueRouter;

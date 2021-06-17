@@ -15,7 +15,7 @@
         <p class="description">{{options.description}}</p>
       </div>
       <p class="date_wrap">
-        <span class="time">{{options.time}}</span>
+        <span class="date">{{options.date}}</span>
       </p>
     </div>
   </router-link>
@@ -106,7 +106,7 @@ export default {
       font-family: helveticaneuethn, Arial;
       overflow: hidden;
 
-      .time {
+      .date {
         color: #a5a5a5;
         font-size: 16px;
         line-height: 30px;

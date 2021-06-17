@@ -1,5 +1,5 @@
 <template>
-  <section id="topSlider">
+  <section id="topSlider" :class="type">
     <div class="banner">
       <div class="image" :data-thumb="options.url" :style="{backgroundImage: `url(${options.url})`}"></div>
       <img class="hide" v-bind:alt="options.name" v-bind:src="options.url">
@@ -16,7 +16,8 @@
       options: {
         type: Object,
         required: true,
-      }
+      },
+      type: String
     },
     data() {
       return {
@@ -40,6 +41,18 @@
 }
 #topSlider{
   height: ~'calc(80vh - 82px)';
+
+  &.small{
+    height: 20vh;
+    max-height: 300px;
+
+    .banner{
+      .image{
+        height: 20vh;
+        max-height: 300px;
+      }
+    }
+  }
 }
 .banner{
   width: 100%;
