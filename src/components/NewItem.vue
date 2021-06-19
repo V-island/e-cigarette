@@ -173,6 +173,7 @@ export default {
     height: auto;
     max-height: 550px;
     background-color: transparent;
+    
     &:hover {
       .item_wrapper .item_des .description {
         padding-left: 30px;
@@ -280,6 +281,11 @@ export default {
         border-left: 1px solid #fff;
         top: -50%;
       }
+    }
+    @media (max-width: @screen-sm-max) {
+      position: relative;
+      width: 100%;
+      padding: 0;
     }
   }
   .item_wrapper {

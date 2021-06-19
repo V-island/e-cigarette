@@ -53,6 +53,13 @@
       }
     }
   }
+
+  @media (min-width:  @screen-xs-max) and (max-width: @screen-md-max) {
+    height: ~'calc(50vh - 56px)';
+  }
+  @media (max-width: @screen-xs-max) {
+    height: ~'calc(30vh - 56px)';
+  }
 }
 .banner{
   width: 100%;
@@ -62,6 +69,13 @@
     background-size: cover;
     width: 100%;
     height: ~'calc(80vh - 82px)';
+
+    @media (min-width:  @screen-xs-max) and (max-width: @screen-md-max) {
+      height: ~'calc(50vh - 56px)';
+    }
+    @media (max-width: @screen-xs-max) {
+      height: ~'calc(30vh - 56px)';
+    }
   }
 }
 </style>

@@ -172,7 +172,7 @@
   }
 }
 .stand{
-  padding: 60px 0;
+  padding: 60px 10px;
   .stand-content{
     border: 1px solid rgba(255, 255, 255, .15);
     border-left-width: 0;
@@ -181,7 +181,7 @@
   }
 }
 .image{
-  padding: 60px 0;
+  padding: 60px 10px;
   .image-item{
     width: 100%;
     height: 360px;
@@ -216,6 +216,13 @@
           -webkit-transform: rotate(45deg);
           -ms-transform: rotate(45deg);
           transform: rotate(45deg);
+
+          @media (max-width: @screen-sm-max) {
+            top: auto;
+            right: auto;
+            left: 60px;
+            bottom: -10px;
+          }
         }
 
         >p{
@@ -229,7 +236,7 @@
   }
 }
 .join{
-  padding: 60px 0;
+  padding: 60px 10px;
 
   .join-content{
     .flexbox();

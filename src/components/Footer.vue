@@ -1,39 +1,41 @@
 <template>
 <section>
   <div id="mcontact" class="mcontact module">
-    <div class="module_container">
-      <div class="container_header wow" style="visibility: visible; animation-name: fadeInUp;">
-        <p class="title">联系我们</p>
-        <p class="subtitle">Contact Us</p>
-      </div>
-      <div class="container_content">
-        <div class="content_wrapper">
-          <div id="contactlist" class="contactlist">
-            <div id="contactinfo" class="contactinfo wow" style="visibility: visible; animation-name: fadeInUp;">
-              <h3 class="ellipsis contact_name">深圳青禾科技有限公司</h3>
-              <p class="ellipsis contact_add">地址：深圳市宝安区新安三路一巷10号</p>
-              <p class="ellipsis contact_zip">邮编：518101</p>
-              <p class="ellipsis contact_tel">售后电话：0755-86372506</p>
-              <p class="ellipsis contact_mob">销售及业务洽谈：19520716007</p>
-              <p class="ellipsis contact_fax">售后微信：bgmg2016</p>
-              <p class="ellipsis contact_eml">邮箱：shery@vapelustion.com</p>
-              <div class="ff_social">
-                <a class="fl" target="_blank" href="http://weibo.com/web">
-                  <i class="fa fa-weibo"></i>
-                </a>
-                <a class="fl" target="_blank" href="tencent://message/?uin=&amp;Site=uelike&amp;Menu=yes">
-                  <i class="fa fa-qq"></i>
-                </a>
-                <a id="mpbtn" class="fl" target="_blank" href="/weixin.jpg">
-                  <i class="fa fa-weixin"></i>
-                </a>
+    <v-container>
+      <div class="module_container">
+        <div class="container_header wow" style="visibility: visible; animation-name: fadeInUp;">
+          <p class="title">联系我们</p>
+          <p class="subtitle">Contact Us</p>
+        </div>
+        <div class="container_content">
+          <div class="content_wrapper">
+            <div id="contactlist" class="contactlist">
+              <div id="contactinfo" class="contactinfo wow" style="visibility: visible; animation-name: fadeInUp;">
+                <h3 class="ellipsis contact_name">深圳青禾科技有限公司</h3>
+                <p class="ellipsis contact_add">地址：深圳市宝安区新安三路一巷10号</p>
+                <p class="ellipsis contact_zip">邮编：518101</p>
+                <p class="ellipsis contact_tel">售后电话：0755-86372506</p>
+                <p class="ellipsis contact_mob">销售及业务洽谈：19520716007</p>
+                <p class="ellipsis contact_fax">售后微信：bgmg2016</p>
+                <p class="ellipsis contact_eml">邮箱：shery@vapelustion.com</p>
+                <div class="ff_social">
+                  <a class="fl" target="_blank" href="http://weibo.com/web">
+                    <i class="fa fa-weibo"></i>
+                  </a>
+                  <a class="fl" target="_blank" href="tencent://message/?uin=&amp;Site=uelike&amp;Menu=yes">
+                    <i class="fa fa-qq"></i>
+                  </a>
+                  <a id="mpbtn" class="fl" target="_blank" href="/weixin.jpg">
+                    <i class="fa fa-weixin"></i>
+                  </a>
+                </div>
               </div>
+              <div class="clear"></div>
             </div>
-            <div class="clear"></div>
           </div>
         </div>
       </div>
-    </div>
+    </v-container>
   </div>
   <div class="footer">
     <v-container>
@@ -75,6 +77,16 @@ export default {
 
         .subtitle {
           color: #999;
+        }
+      }
+
+      @media (max-width: @screen-sm-max) {
+        padding: 85px 20px 50px;
+
+        .container_header{
+          float: none;
+          width: 100%;
+          margin-right: 0;
         }
       }
     }
@@ -172,7 +184,23 @@ export default {
       max-width: 1170px;
       position: relative;
       padding-left: 470px;
-      top: -45px
+      top: -45px;
+
+      @media (max-width: @screen-sm-max) {
+        top: 20px;
+        padding: 0;
+
+        .ff_social{
+          float: left;
+          position: relative;
+          left: 0;
+          margin-top: 20px;
+
+          &::after{
+            display: none;
+          }
+        }
+      }
     }
   }
 }
@@ -183,9 +211,9 @@ export default {
 
   p {
     line-height: 24px;
-    height: 24px;
     text-align: center;
     margin: 0 auto;
+    padding: 10px 0;
   }
 
   span.ellipsis {

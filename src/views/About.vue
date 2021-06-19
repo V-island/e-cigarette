@@ -20,12 +20,14 @@
         <p class="subtitle">development path</p>
       </div>
       <div class="course-content">
-        <div class="course-item wow fadeInUp" v-for="(item, index) in courseList" :key="index">
-          <p class="date">
-            <span>{{item.date}}</span>
-          </p>
-          <p class="description">{{item.description}}</p>
-        </div>
+        <v-col v-for="(item, index) in courseList" :key="index" cols="12" xs="12" md="6" lg="6" xl="6">
+          <div class="course-item wow fadeInUp">
+            <p class="date">
+              <span>{{item.date}}</span>
+            </p>
+            <p class="description">{{item.description}}</p>
+          </div>
+        </v-col>
       </div>
     </v-container>
   </div>
@@ -148,11 +150,22 @@ export default {
   }
   .course-content{
     padding: 40px 0;
-    .flexbox();
-    .align-items(center);
+
+    @media (min-width: @screen-sm-max) {
+      .flexbox();
+      .align-items(center);
+    }
+    @media (max-width: @screen-sm-max) {
+      padding: 0;
+    }
   }
   .course-item{
     margin-right: 20px;
+
+    @media (max-width: @screen-sm-max) {
+      padding: 20px 0;
+    }
+
     .date{
       font-size: 36px;
       font-weight: bold;

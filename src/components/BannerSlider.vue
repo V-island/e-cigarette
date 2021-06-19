@@ -58,6 +58,13 @@
     position: relative;
     overflow: hidden;
     display: block;
+
+    @media (min-width:  @screen-xs-max) and (max-width: @screen-md-max) {
+      height: ~'calc(50vh - 56px)';
+    }
+    @media (max-width: @screen-xs-max) {
+      height: ~'calc(30vh - 56px)';
+    }
 }
 #topSlider .bx-wrapper{
   border-width: 0;
@@ -67,6 +74,13 @@
 
   .bx-viewport{
     height: ~'calc(100vh - 82px)';
+
+    @media (min-width:  @screen-xs-max) and (max-width: @screen-md-max) {
+      height: ~'calc(50vh - 56px)';
+    }
+    @media (max-width: @screen-xs-max) {
+      height: ~'calc(30vh - 56px)';
+    }
   }
 
   .bx-pager {

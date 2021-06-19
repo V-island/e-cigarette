@@ -55,7 +55,6 @@ export default {
   .align-items(center);
 
   height: 500px;
-  // margin-top: -200px;
 }
 
 .preview,
@@ -173,6 +172,44 @@ export default {
     .slick-prev,
     .slick-next{
       top: 60%;
+    }
+  }
+}
+.home-theme{
+  .info{
+    @media (max-width: @screen-sm-max) {
+      .description{
+        width: 80%;
+      }
+    }
+  }
+  @media (max-width: @screen-sm-max) {
+    margin-left: 0 !important;
+    margin-top: -240px !important;
+    width: 100%;
+
+    .slider{
+      .flex-direction(column);
+      justify-content: normal;
+      height: auto;
+      min-height: 600px;
+    }
+    
+    .preview,
+    .info{
+      width: 100%;
+    }
+
+    .preview{
+      background-position: left bottom;
+      height: 300px;
+    }
+    .info{
+      padding-top: 20px;
+    }
+
+    /deep/ .slick-list{
+      width: 100%;
     }
   }
 }

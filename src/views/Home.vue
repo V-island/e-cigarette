@@ -10,9 +10,9 @@
         <p class="subtitle">PRODUCT DESIGN</p>
       </div>
       <div class="container_content">
-        <VueSlickCarousel v-bind="product.settings">
+        <VueSlickCarousel v-bind="settings">
           <template v-for="(item, index) in product.productList">
-            <ProductItem class="wow fadeInUp" :data-wow-delay="`${index/10}s`" :key="item.id" :options="item" height="calc(100% / 4 - 15px)"></ProductItem>
+              <ProductItem class="wow fadeInUp" :key="item.id" :data-wow-delay="`${index/10}s`" :options="item"></ProductItem>
           </template>
         </VueSlickCarousel>
         <router-link class="more-link" to="/product">
@@ -76,7 +76,7 @@
       </div>
       <div class="container_content">
         <div class="content_wrapper">
-          <TeamSlider class="side" :list="teamList" />
+          <TeamSlider class="side" :list="teamList" theme="home-theme"/>
         </div>
       </div>
     </div>
@@ -106,18 +106,10 @@ export default {
   },
   data() {
     return {
+      screenWidth: document.documentElement.clientWidth,  //实时屏幕宽度
       product: {
         style: {
           backgroundImage: `url(${require('@/assets/home/product_bg.png')})`
-        },
-        settings: {
-          dots: true,
-          focusOnSelect: true,
-          infinite: true,
-          speed: 500,
-          slidesToShow: 4,
-          slidesToScroll: 4,
-          touchThreshold: 5
         },
         productList: [{
           id: '202106001',
@@ -207,6 +199,30 @@ export default {
       }]
     }
   },
+  computed: {
+    settings() {
+      // let slide = 4
+
+      return {
+        dots: true,
+        focusOnSelect: this.screenWidth > 960 ? true : false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: this.screenWidth > 960 ? 4 : 2,
+        slidesToScroll: this.screenWidth > 960 ? 4 : 2,
+        touchThreshold: 5
+      }
+    }
+  },
+  mounted () {
+    const that = this
+    window.onresize = () => {
+      return (() => {
+        window.screenWidth = document.body.clientWidth
+        that.screenWidth = window.screenWidth
+      })()
+    }
+  },
 }
 </script>
 
@@ -218,6 +234,11 @@ export default {
 .product {
   background-color: #18191c;
   padding: 90px 0 130px;
+
+  
+  @media (max-width: @screen-sm-max) {
+    padding: 60px 0 90px;
+  }
 
   .product_container {
     .background-imager();
@@ -334,6 +355,14 @@ export default {
         }
       }
     }
+
+    @media (max-width: @screen-sm-max) {
+      padding: 40px;
+
+      .container_header{
+        margin-bottom: 40px;
+      }
+    }
   }
 }
 
@@ -341,15 +370,26 @@ export default {
   .flexbox();
   background: #1d1e20;
 
+  @media (max-width: @screen-sm-max) {
+    .flex-direction(column);
+  }
+
   .about-info,
   .about-preview {
     width: ~'calc(100% / 2)';
+
+    @media (max-width: @screen-sm-max) {
+      width: 100%;
+    }
   }
 
   .about-info {
-    // max-width: 860px;
     padding: 80px;
     text-align: center;
+
+    @media (max-width: @screen-sm-max) {
+      padding: 40px 20px;
+    }
 
     .container_header {
       margin-bottom: 40px;
@@ -380,27 +420,57 @@ export default {
   padding: 100px 0;
   background: #0c0c0c;
 
+  @media (max-width: @screen-sm-max) {
+    padding: 40px 0;
+  }
+
   .module_container{
     max-width: initial;
+
+    @media (max-width: @screen-sm-max) {
+      &.wide{
+        padding: 20px;
+      }
+    }
   }
   .container_header{
     text-align: left;
     float: left;
     padding-bottom: 50px;
     min-height: 50px;
+
+    @media (max-width: @screen-sm-max) {
+      float: none;
+      padding-bottom: 20px;
+    }
   }
   .container_category{
     margin-right: 40px;
     padding-top: 5px;
     float: right;
+
+    @media (max-width: @screen-sm-max) {
+      float: none;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
   }
   .content_wrapper{
     position: relative;
     height: 510px;
+
+    @media (max-width: @screen-sm-max) {
+      height: auto;
+    }
   }
   .news-list{
     float: right;
     width: 50%;
+
+    @media (max-width: @screen-sm-max) {
+      width: 100%;
+      float: none;
+    }
   }
 }
 
@@ -413,6 +483,10 @@ export default {
   .module_container{
     max-width: initial;
     padding: 0 80px;
+
+    @media (max-width: @screen-sm-max) {
+      padding: 0 20px;
+    }
   }
   .container_header{
     text-align: left;
@@ -423,9 +497,20 @@ export default {
     top: 100px;
     padding-top: 60px;
     width: 360px;
+
+    @media (max-width: @screen-sm-max) {
+      width: 100%;
+      padding: 10px 0;
+      position: relative;
+      top: auto;
+    }
   }
   .content_wrapper{
     padding: 0 50px;
+
+    @media (max-width: @screen-sm-max) {
+      padding: 0;
+    }
   }
   .side{
     margin-left: calc(50% - 37% - 20px);
