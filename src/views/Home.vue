@@ -12,7 +12,7 @@
       <div class="container_content">
         <VueSlickCarousel v-bind="product.settings">
           <template v-for="(item, index) in product.productList">
-            <ProductItem class="wow fadeInUp" :data-wow-delay="`${index/10}s`" :key="item.id" :options="item"></ProductItem>
+            <ProductItem class="wow fadeInUp" :data-wow-delay="`${index/10}s`" :key="item.id" :options="item" height="calc(100% / 4 - 15px)"></ProductItem>
           </template>
         </VueSlickCarousel>
         <router-link class="more-link" to="/product">

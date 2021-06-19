@@ -11,7 +11,7 @@
         </div>
         <p class="description">LVC团队主要成员由来自资深游戏行业，4A广告公司，工业设计，电子元器件及世界500强仪器设备公司精英构成，完全跨界的组合成就了我们可以用不一样的眼光看待我们从事的全新行业，旗下青禾品牌的第一款产品一经推出就火爆了整个中国市场，目前我们已经向市场投放了全新的一次性电子烟，敬请期待。</p>
       </div>
-      </v-container>
+    </v-container>
   </div>
   <div class="course page_module">
     <v-container>

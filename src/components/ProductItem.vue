@@ -1,5 +1,5 @@
 <template>
-  <div class="item">
+  <div class="item" :style="{height: height}">
     <router-link class="item_box" :to="`/product/${options.id}`">
       <div class="item_img">
         <img :src="options.imgUrl" :alt="options.title">
@@ -23,14 +23,15 @@
       options: {
         type: Object,
         required: true,
-      }
+      },
+      height: String
     },
   }
 </script>
 
 <style lang="less" scoped>
 .item{
-  width: calc(100% / 4 - 15px);
+  width: 100%;
   height: auto;
   float: left;
   margin-right: 15px;

@@ -36,7 +36,7 @@ export default {
 <style lang="less" scoped>
 .item {
   position: relative;
-  width: calc(100% / 4 - 15px);
+  width: 100%;
   height: auto;
   float: left;
   transition: all .36s ease;

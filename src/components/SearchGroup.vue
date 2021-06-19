@@ -2,7 +2,8 @@
 <div id="search-nav" class="searchGroup">
   <div class="search_wrap">
     <div class="searchOnOff">
-      <icon-ios-search w="24px" h="24px"/>
+      <!-- <icon-ios-search w="24px" h="24px"/> -->
+      <router-link to="/search"><icon-ios-search w="24px" h="24px"/></router-link>
     </div>
     <div class="searchBox">
       <div class="searchFormGroup">
@@ -21,26 +22,26 @@ import $ from 'jquery'
 export default {
   mounted () {
     $(function () {
-      var searchWrap = $('#search-nav');
+      // var searchWrap = $('#search-nav');
 
-      function opensearch() {
-        var openSearchBtn = $('.searchOnOff');
-        openSearchBtn.click(function () {
-          if (searchWrap.hasClass('_open')) {
+      // function opensearch() {
+      //   var openSearchBtn = $('.searchOnOff');
+      //   openSearchBtn.click(function () {
+      //     if (searchWrap.hasClass('_open')) {
 
-            $(searchWrap).removeClass('_open');
-            $('.searchBox', searchWrap).slideUp();
-          } else {
-            $(searchWrap).addClass('_open');
-            $('.searchBox', searchWrap).slideDown();
+      //       $(searchWrap).removeClass('_open');
+      //       $('.searchBox', searchWrap).slideUp();
+      //     } else {
+      //       $(searchWrap).addClass('_open');
+      //       $('.searchBox', searchWrap).slideDown();
 
-          }
-        });
-      }
+      //     }
+      //   });
+      // }
 
-      if (searchWrap.length) {
-        opensearch();
-      }
+      // if (searchWrap.length) {
+      //   opensearch();
+      // }
     });
   },
 }

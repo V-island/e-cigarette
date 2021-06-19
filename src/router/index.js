@@ -49,6 +49,11 @@ const router = {
       path: '/contact',
       name: 'Contact',
       component: solve => require(['@/views/Contact.vue'], solve)
+    },
+    {
+      path: '/search',
+      name: 'Search',
+      component: solve => require(['@/views/Search.vue'], solve)
     }
   ],
   scrollBehavior() {

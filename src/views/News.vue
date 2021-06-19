@@ -2,25 +2,33 @@
   <section>
     <BannerPreview :options='banner'/>
     <div class="page_module">
-      <div class="container_header wow fadeInUp">
-        <p class="title">资讯</p>
-      </div>
-      <div class="container_category wow fadeInUp">
-        <router-link class="active" to="/news">
-          <span>公司新闻</span>
-        </router-link>
-        <router-link to="/news">
-          <span>行业资讯</span>
-        </router-link>
-        <router-link to="/news">
-          <span>百科知识</span>
-        </router-link>
-      </div>
-      <div class="container_content" >
-        <div class="list-wrapper">
-          <NewListItem class="wow fadeInUp" v-for="(item, index) in newsList" :data-wow-delay="`${index/10}s`" :key="item.id" :options="item"></NewListItem>
+      <v-container>
+        <div class="container_header wow fadeInUp">
+          <p class="title">资讯</p>
         </div>
-      </div>
+        <div class="container_category wow fadeInUp">
+          <router-link class="active" to="/news">
+            <span>公司新闻</span>
+          </router-link>
+          <router-link to="/news">
+            <span>行业资讯</span>
+          </router-link>
+          <router-link to="/news">
+            <span>百科知识</span>
+          </router-link>
+        </div>
+        <div class="container_content" >
+          <div class="list-wrapper">
+            <v-row>
+              <template v-for="(item, index) in newsList">
+                <v-col :key="item.id" cols="12" xs="6" md="6" lg="3" xl="3">
+                  <NewListItem class="wow fadeInUp" :data-wow-delay="`${index/10}s`" :options="item"></NewListItem>
+                </v-col>
+              </template>
+            </v-row>
+          </div>
+        </div>
+      </v-container>
     </div>
   </section>
 </template>

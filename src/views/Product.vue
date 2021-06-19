@@ -2,22 +2,28 @@
   <section>
     <BannerPreview :options='banner'/>
     <div class="page_module">
-      <div class="container_header wow fadeInUp">
-        <p class="title">产品</p>
-      </div>
-      <div class="container_category wow fadeInUp">
-        <router-link class="active" to="/product">
-          <span>电子烟主机</span>
-        </router-link>
-        <router-link to="/product">
-          <span>雾化器及配件</span>
-        </router-link>
-      </div>
-      <div class="container_content" >
-        <template v-for="(item, index) in productList">
-          <ProductItem class="wow fadeInUp" :data-wow-delay="`${index/10}s`" :key="item.id" :options="item"></ProductItem>
-        </template>
-      </div>
+      <v-container>
+        <div class="container_header wow fadeInUp">
+          <p class="title">产品</p>
+        </div>
+        <div class="container_category wow fadeInUp">
+          <router-link class="active" to="/product">
+            <span>电子烟主机</span>
+          </router-link>
+          <router-link to="/product">
+            <span>雾化器及配件</span>
+          </router-link>
+        </div>
+        <div class="container_content" >
+          <v-row>
+            <template v-for="(item, index) in productList">
+              <v-col :key="item.id" cols="12" xs="6" md="6" lg="3" xl="3" style="padding: 0 15px 20px 0;">
+                <ProductItem class="wow fadeInUp" :data-wow-delay="`${index/10}s`" :options="item"></ProductItem>
+              </v-col>
+            </template>
+          </v-row>
+        </div>
+      </v-container>
     </div>
   </section>
 </template>
@@ -66,5 +72,7 @@
 </script>
 
 <style lang="less" scoped>
-
+.container_content{
+  margin-top: 30px;
+}
 </style>
