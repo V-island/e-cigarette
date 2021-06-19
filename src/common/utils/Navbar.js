@@ -5,8 +5,10 @@ var Navbar = {
     var $listPar = $('.nav-wrapper .nav'),
       $moveEl, $moveShow,
       $headerNavList = $('.nav-wrapper .nav>.navitem', '#header'),
+      $movesEl = $('.nav-wrapper .nav>.jsMoveEl', '#header'),
       $choiseItem = $('.nav-wrapper .nav>.navitem>.active', '#header').closest('.navitem');
-
+      
+    if ($movesEl.length) $movesEl.remove()
     if (!$choiseItem.length) return;
 
     function getWidth(el) {

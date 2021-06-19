@@ -1,4 +1,5 @@
 import VueRouter from 'vue-router'
+import store from '../store';
 
 // 解决导航栏中的vue-router在3.0版本以上重复点菜单报错问题
 const originalPush = VueRouter.prototype.push
@@ -12,6 +13,10 @@ const router = {
   routes: [
     {
       path: '/',
+      redirect: '/home',
+    },
+    {
+      path: '/home',
       name: 'Home',
       component: solve => require(['@/views/Home.vue'], solve)
     },
@@ -72,5 +77,9 @@ vueRouter.beforeEach((to, from, next) => {
   document.body.scrollTop = 0
   next()
 });
+// 路由成功后，获取菜单
+vueRouter.afterEach((to) => {
+  store.dispatch('activeMenuPage', to.path)
+})
 
 export default vueRouter;

@@ -10,23 +10,10 @@
       <div class="nav-wrapper">
         <div class="content">
           <ul class="nav">
-            <li class="navitem">
-              <router-link class="active" to="/"><span data-title="首页">首页</span></router-link>
-            </li>
-            <li class="navitem">
-              <router-link to="/product"><span data-title="产品">产品</span></router-link>
-            </li>
-            <li class="navitem">
-              <router-link to="/news"><span data-title="资讯">资讯</span></router-link>
-            </li>
-            <li class="navitem">
-              <router-link to="/merchants"><span data-title="招商">招商</span></router-link>
-            </li>
-            <li class="navitem">
-              <router-link to="/about"><span data-title="关于">关于</span></router-link>
-            </li>
-            <li class="navitem">
-              <router-link to="/contact"><span data-title="联系">联系</span></router-link>
+            <li class="navitem" v-for="item in siderMenu" :key="item.title">
+              <router-link :class="item.active ? 'active' : ''" :to="item.url">
+                <span :data-title="item.title">{{ item.title }}</span>
+              </router-link>
             </li>
           </ul>
           <SearchGroup />
@@ -38,15 +25,28 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import Navbar from '@utils/Navbar'
 import SearchGroup from './SearchGroup.vue'
 
 export default {
   components: {
-    SearchGroup,
+    SearchGroup
   },
-  mounted () {
-    Navbar.headerHover();
+  computed: {
+    ...mapGetters(['siderMenu'])
+  },
+  watch: {
+    siderMenu: {
+      deep: true,
+      handler() {
+        this.$nextTick(() => {
+          setTimeout(() => {
+            Navbar.headerHover();
+          }, 50);
+        })
+      },
+    }
   },
 }
 </script>
