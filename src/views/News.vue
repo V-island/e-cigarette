@@ -7,15 +7,7 @@
           <p class="title">资讯</p>
         </div>
         <div class="container_category wow fadeInUp">
-          <router-link class="active" to="/news">
-            <span>公司新闻</span>
-          </router-link>
-          <router-link to="/news">
-            <span>行业资讯</span>
-          </router-link>
-          <router-link to="/news">
-            <span>百科知识</span>
-          </router-link>
+          <a v-for="(item, index) in ['公司新闻', '行业资讯', '百科知识']" :key="index" :class="{active: activeIndex === index}" @click.stop="activeIndex = index">{{item}}</a>
         </div>
         <div class="container_content" >
           <div class="list-wrapper">
@@ -50,6 +42,7 @@
           name: '资讯',
           url: './banner/banner_news.png'
         },
+        activeIndex: 0,
         newsList: [{
           id: '202106002',
           date: '2021-06-10',

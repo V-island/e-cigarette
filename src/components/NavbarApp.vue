@@ -49,6 +49,13 @@ export default {
   text-align: center;
 }
 .menu-item {
+  .v-list-item__content {
+    padding: 15px 0 !important;
+  }
+  .v-list-item__title {
+    font-size: 1.2rem !important;
+    line-height: 1.2 !important;
+  }
   &.active {
     background: @brand-primary;
   }
